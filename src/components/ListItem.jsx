@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 
 function ListItem(props) {
+    // initialize state to locally show details of movie
     const [details, setDetails] = useState({show: false})
 
+    // checks state and toggles to the opposite true/false
     function toggleDetails(){
         if(details.show == true){
             setDetails({show: false})
@@ -12,6 +14,7 @@ function ListItem(props) {
         }
     }
 
+    // conditionally renders detail text
     function renderDetails(detailText){
         if(details.show == true){
             return <p>{detailText}</p>
